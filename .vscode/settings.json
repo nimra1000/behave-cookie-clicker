@@ -1,0 +1,8 @@
+{
+    "cucumberautocomplete.steps": [
+        "features/steps/*.py",
+        "features/pages/*.py",
+        // "features/utils/*.py",
+    ],
+    "cucumberautocomplete.strictGherkinCompletion": true
+}
