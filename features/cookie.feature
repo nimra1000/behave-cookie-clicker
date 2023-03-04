@@ -1,6 +1,7 @@
-Feature: showing off behave
+@cookie
+Feature: Cookie feature
 
-  Scenario: run a simple test
-    Given we have behave installed
-      When we implement a test
-      Then behave will test it for us!
+  @two
+  Scenario: Check the basic functionality of the retrieval and expenditure of the cookie currency
+    Given I login as 'Robot'
+    When I type 'Robot' into the 'name' input field

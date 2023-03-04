@@ -1,14 +1,11 @@
+from selenium.webdriver.common.by import By
+
 class LandingPage:
     def __init__(self, driver):
         self.driver = driver
-        self.name_field = "input[name='username']"
-        self.start_button = "button[name='login']"
-
-    def enter_name(self, name):
-        self.driver.find_element_by_css_selector(self.username_field).send_keys(name)
-
-    def click_start_button(self):
-        self.driver.find_element_by_css_selector(self.start_button).click()
+        self.name_field = "//input['name']"
+        self.start_button = "//button[contains(text(), 'Start!')]"
+        self.greeting_label = "//p[contains(text(), 'Hello')]"
 
     def login(self, name):
         self.enter_name(name)
