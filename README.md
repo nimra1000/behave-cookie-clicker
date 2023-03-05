@@ -46,14 +46,13 @@ More information can be found below
    - HTTP:
     ```git clone https://github.com/nimra1000/behave-cookie-clicker.git```
 
-   Then
 
    **Note:** It is highly recommended creating a Python Virtual Environment on your local machine before installing any
    dependencies
 
    ```cd behave-cookie-clicker```
 
-   then run :
+   and run :
 
    ```pip3 install -r requirements.txt```
 
@@ -106,6 +105,7 @@ We use pre-commit hooks to ensure formatting and code standards. Please ensure y
 
 
 2. Start debugging automatically on failure
+## TODO: Implement more logging
 
    ```behave -D debug --tags=@cookie```
 

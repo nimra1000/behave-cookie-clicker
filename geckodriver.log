@@ -1,0 +1,18 @@
+1678029307145	geckodriver	INFO	Listening on 127.0.0.1:64417
+1678029307530	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "64418" "--r ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1k/j96x3t9x3b71729s76jn3d940000gn/T/rust_mozprofilekGNJHw"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678029308078	Marionette	INFO	Marionette enabled
+1678029308178	Marionette	INFO	Listening on port 64427
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:64418
+Read port: 64427
+1678029308464	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1k/j96x3t9x3b71729s76jn3d940000gn/T/rust_mozprofilekGNJHw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64418/devtools/browser/98096316-b1f5-4ffd-b18d-41b48dbdac5b
+console.error: ({})
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://seun-akinbode-2022-09-29.cookieclickertechtest.airelogic.com."
+console.error: ({})
+1678029311310	Marionette	INFO	Stopped listening on port 64427
+!!! error running onStopped callback: TypeError: callback is not a function

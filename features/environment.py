@@ -1,5 +1,6 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from features.pages.base_page import BasePage
 from features.pages.landing_page import LandingPage
 from features.pages.game_page import GamePage
@@ -11,9 +12,16 @@ def before_all(context):
 
 
 def before_scenario(context, _):
-    context.driver = webdriver.Chrome(ChromeDriverManager().install())
-    context.driver.get(context.base_url)
+    browser = context.config.userdata['browser']
 
+    if browser == 'chrome':
+         context.driver = webdriver.Chrome(ChromeDriverManager().install())
+    elif browser == 'firefox':
+         context.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    else:
+        raise Exception(f'Invalid browser "{browser}" specified in userdata')
+
+    context.driver.get(context.base_url)
 
     context.base = BasePage(context.driver)
     context.landing = LandingPage(context.driver)
