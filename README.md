@@ -57,7 +57,7 @@ More information can be found below
 
    ```pip3 install -r requirements.txt```
 
-   Then
+   Then (if you would like the option to run on Firefox)
 
    Download the appropriate Firefox webdriver named Geckodriver
    from [github](https://github.com/mozilla/geckodriver/releases).
