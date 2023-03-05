@@ -28,9 +28,10 @@ More information can be found below
 1. Project Structure
 
    - The structure of the project consists of:
-     - feature file: this has a natural language format describing a feature with examples and expected outcomes. It
-       is found under the features folder.
-     - steps file: this where the feature is actually implemented using Python. It is found under the steps folder
+   
+     - Feature files : they have a natural language format that describes a feature, including examples and expected outcomes. They are typically located under the "features" folder.
+
+     - Steps file : this is where the feature described in the feature file is actually implemented using Python. It is typically located under the "steps" folder.
 
 
 3. Installation
