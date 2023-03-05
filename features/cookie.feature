@@ -32,5 +32,3 @@ Feature: Check the basic functionality of the Cookie feature
     When I type '5' into the 'cookies-to-sell' input field
     And I click on the 'sell-cookies' button
     Then I should have 0 cookies
-
-#  @bug Scenario: A user is not able to sell their cookies if the amount entered is equal to the current balance
