@@ -28,7 +28,7 @@ More information can be found below
 1. Project Structure
 
    - The structure of the project consists of:
-   
+
      - Feature files : they have a natural language format that describes a feature, including examples and expected outcomes. They are typically located under the "features" folder.
 
      - Steps file : this is where the feature described in the feature file is actually implemented using Python. It is typically located under the "steps" folder.
@@ -91,7 +91,7 @@ We use pre-commit hooks to ensure formatting and code standards. Please ensure y
 
  ```behave --tags=@one```
 
- ```behave --tags=@cookie --no-skipped```
+ ```behave --tags=@cookie```
 
  ```behave -t=@factory```
 
@@ -110,7 +110,14 @@ We use pre-commit hooks to ensure formatting and code standards. Please ensure y
 
    ```behave -D debug --tags=@cookie```
 
-3. Run tests that generate reports
+3. Failed tests will be written to:
+
+    [rerun_failing.features]
+
+    during the final test run 
+
+
+4. Run tests that generate reports
 
    We are using [Allure](https://docs.qameta.io/allure/#_behave).
 
