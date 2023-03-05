@@ -14,29 +14,19 @@ def step_impl(context, delay):
 
 @step("I type '{text}' into the '{locator}' input field")
 def step_impl(context, text, locator):
-    context.name = text
+    if locator == 'name':
+        context.name = text
     context.base.type(locator, text)
 
 @step("I click on the '{locator}' button")
 def step_impl(context, locator):
     context.base.click_button(locator)
 
-@step('I should be redirected to the Game page')
-def step_impl(context):
-    #TODO: extend below contatenation to allow names with spaces eg: Nimra Ajmal
-    expected_url = f"{context.base_url}game/{context.name}"
-    context.base.confirm_redirection(expected_url)
-
-@step("I should be greeted")
-def step_impl(context):
-    greeting_label = f"Hello {context.name}"
-    context.base.confirm_label_text_visible(greeting_label)
-
 @step("I should see the relevant info")
 def step_impl(context):
     for r in context.table:
         locator = r["category"]
-        context.base.confirm_key_value_pair_visible(locator)
+        context.landing.confirm_key_value_pair_visible(locator)
 
 @step("I should see the relevant buttons")
 def step_impl(context):

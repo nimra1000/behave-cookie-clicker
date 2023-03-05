@@ -1,23 +1,27 @@
-class GamePage:
+import time
+from selenium.webdriver.common.by import By
+from features.pages.base_page import BasePage
+
+
+class GamePage(BasePage):
     def __init__(self, driver):
         self.driver = driver
-        self.title_btn = "input[name='username']"
-        self.name_label = "button[name='login']"
+    
+    def set_cookie_quantity(self, desired_quantity):
+        element = self.driver.find_element(By.ID, "cookies")
+        current_quantity = int(element.text)
 
-        self.get_cookie_btn = "input[name='username']"
-        self.sell_cookie_btn = "button[name='login']"
-        self.buy_factory_btn = "input[name='username']"
+        if current_quantity != desired_quantity:
+            difference = current_quantity - desired_quantity
+            if difference < 0:
+                for i in range(abs(difference)):
+                    self.click_button("click")
+            elif difference > 0:
+                self.type("cookies-to-sell", difference)
+                self.click_button("sell-cookies!")
 
-        self.cookies_label = "button[name='login']"
-        self.factory_label = "input[name='username']"
-        self.factory_label = "button[name='login']"
-
-    def enter_name(self, name):
-        self.driver.find_element_by_css_selector(self.username_field).send_keys(name)
-
-    def click_start_button(self):
-        self.driver.find_element_by_css_selector(self.start_button).click()
-
-    def login(self, name):
-        self.enter_name(name)
-        self.click_start_button()
+    def check_quantity(self, expected_quantity, locator):
+        element = self.driver.find_element(By.ID, locator)
+        current_quantity = int(element.text)
+        assert current_quantity == expected_quantity, f"quantity received '{current_quantity}' does not match expected quantity of '{expected_quantity}' "
+       

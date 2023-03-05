@@ -9,16 +9,26 @@ Feature: Login feature
     Then I should be redirected to the Game page
     And I should be greeted
     And I should see the relevant info 
-    | category      |
-    | Cookies       |
-    | Factories     |
-    | Money         |
+    | category        |
+    | Cookies         |
+    | Factories       |
+    | Money           |
     And I should see the relevant input fields
-    | category      |
-    | Sell Cookies  |
-    | Buy Factories |
+    | category        |
+    | cookies-to-sell |
+    | factories-to-buy|
     And I should see the relevant buttons
-    | category      |
-    | Click Cookie! |
-    | Sell Cookies! |
-    | Buy Factories!|
+    | category        |
+    | click           |
+    | sell-cookies    |
+    | buy-factories   |
+
+
+#  TODO:
+#  @bug Scenario: If a user joins with a username used in the past (from leaderboard), the Old scores will be overwritten with the newer instance
+#  @bug Scenario: Can join a game via URL manipulation (new and existing user)
+#  @bug Scenario: No validation on user. E.g. Integers and Symbols can be used. Also no limit on the characters, which messes up the UI structure if the username is extremely long.
+#  @bug Scenario: It is possible to join and continue any instance of the games linked on the leaderboard (unsure if this was purposeful)
+#  @bug Scenario: The leaderboard for 'High Score' is not sorted in descending order of integers.
+
+

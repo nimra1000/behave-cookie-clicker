@@ -1,9 +1,9 @@
-import logging
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from features.pages.base_page import BasePage
 from features.pages.landing_page import LandingPage
 from features.pages.game_page import GamePage
+import allure
 
 
 def before_all(context):
@@ -18,6 +18,13 @@ def before_scenario(context, _):
     context.base = BasePage(context.driver)
     context.landing = LandingPage(context.driver)
     context.game = GamePage(context.driver)
+
+
+def after_step(context, step):
+    if step.status == "failed":
+        allure.attach(
+            context.driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG
+        )
 
 
 def after_scenario(context, _):
